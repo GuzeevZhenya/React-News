@@ -1,0 +1,30 @@
+.full-post__img {
+  max-width: 800px;
+}
+
+.full-post__content{
+    max-width: 500px;
+    
+}
+
+.full-post{
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.full-post__back {
+  background: #61a229;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  display: inline-block;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}

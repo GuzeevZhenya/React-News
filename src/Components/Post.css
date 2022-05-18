@@ -1,0 +1,23 @@
+.posts {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 40px auto;
+}
+
+.post {
+  width: 400px;
+  margin: 0 50px;
+}
+
+.post-button {
+  width: 100px;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+}
+.post-image {
+  max-width: 250px;
+}
