@@ -3,34 +3,29 @@ import "./App.css";
 import { Routes, Route, useParams } from "react-router-dom";
 import { news } from "./api";
 import { useEffect, useState } from "react";
-import { Post } from "./Components/Post";
+import { Main } from "./Components/Main";
 import { FullPost } from "./Components/FullPost";
 
 function App() {
   const [posts, setPosts] = useState();
   const [searchingPost, setSearchingPost] = useState();
+
+
   useEffect(() => {
     news.getNews().then((data) => setPosts(data.articles));
   }, []);
 
-  const getPosts = () => {
+  const getPosts = (post) => {
+    
     setSearchingPost("");
-    news.getNews(searchingPost).then((data) => setPosts(data.articles));
+    news.getNews(post).then((data) => setPosts(data.articles));
   };
 
   return (
     <div className="App">
-      <input
-        value={searchingPost}
-        onChange={(e) => setSearchingPost(e.target.value)}
-        className="main__search-input"
-        placeholder="Что хотите посмотреть?"
-        // onKeyDown={(e) => findFilmByEnter(e)}
-      />
-      <button onClick={() => getPosts()}>Найти</button>
       <Routes>
-        <Route path="/" element={<Post posts={posts} />} exact />
-        <Route path="/post/:id" element={<FullPost posts={posts} exact />} />
+        <Route path="/" element={<Main posts={posts} getPosts={getPosts}/>}/>
+        <Route path="/post/:id" element={<FullPost posts={posts}/>} />
       </Routes>
     </div>
   );
