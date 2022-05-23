@@ -24,7 +24,7 @@ export const FullPost = ({ posts }) => {
   }
 
   return (
-    <div className="full-post">
+    <div className="npm">
     {postsInfo ?(<> <img
       className="full-post__img"
       src={postsInfo[0].urlToImage}

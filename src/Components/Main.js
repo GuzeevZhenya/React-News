@@ -1,5 +1,8 @@
 import React,{useState} from 'react';
+import { Footer } from './Footer';
 import { Post } from './Post';
+
+import './Main.css'
 
 export const Main = ({ posts, getPosts }) => {
 	
@@ -9,13 +12,16 @@ export const Main = ({ posts, getPosts }) => {
 		<div>
 		  <input
         value={searchingPost}
+        type="search"
+        placeholder="search"
         onChange={(e) => setSearchingPost(e.target.value)}
         className="main__search-input"
-        placeholder="Что хотите посмотреть?"
+        
         // onKeyDown={(e) => findFilmByEnter(e)}
       />
-      <button onClick={() => getPosts(searchingPost)}>Найти</button>
-      <Post posts={posts} />
+      <button className="btn" onClick={() => getPosts(searchingPost)}>Найти</button>
+      <Post posts={posts} searchingPost={searchingPost} />
+      <Footer/>
     </div>
   );
 };

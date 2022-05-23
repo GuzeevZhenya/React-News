@@ -17,6 +17,7 @@ function App() {
 
   const getPosts = (post) => {
     setSearchingPost("");
+    console.log(post)
     news.getNews(post).then((data) => setPosts(data.articles));
   };
 

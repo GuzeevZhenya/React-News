@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Post.css";
 import notFoundImage from '../image/images.png';
 
-export const Post = ({ posts }) => {
+export const Post = ({ posts,searchingPost }) => {
   
   const post =
     posts &&
@@ -18,12 +18,13 @@ export const Post = ({ posts }) => {
       </Link>
       </div>
     ));
+  
 
   return (
     <>
       <h2>Посты</h2>
       <div className="posts">
-        {post}
+        {post && post.length ? <>{post}</> : <h3>По запроса: "{searchingPost}" ничего не найдено</h3>}
       </div>
      
     </>
