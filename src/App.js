@@ -16,7 +16,6 @@ function App() {
   }, []);
 
   const getPosts = (post) => {
-    
     setSearchingPost("");
     news.getNews(post).then((data) => setPosts(data.articles));
   };

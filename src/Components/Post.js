@@ -13,7 +13,7 @@ export const Post = ({ posts }) => {
         <h2>{item.title}</h2>
         <div>
           <img className="post-image" src={item.urlToImage ? item.urlToImage : notFoundImage} alt={item.title} />
-          <p className="post-content">{item.content}</p>
+          <p className="post-content">{item.content.substring(0, item.content.indexOf("[+"))}</p>
         </div>
       </Link>
       </div>
