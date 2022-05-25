@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import "./Post.css";
 import notFoundImage from '../image/images.png';
 
-export const Post = ({ posts,searchingPost }) => {
+export const Post = ({ posts, searchingPost }) => {
   
   const post =
     posts &&
     posts.map((item) => (
       <div className="post" key={item.url}>
-      <Link Link className="post-content" to={`post/${encodeURIComponent(item.url)}`}>
+      <Link className="post-content" to={`post/${encodeURIComponent(item.url)}`}>
         <h2>{item.title}</h2>
         <div>
           <img className="post-image" src={item.urlToImage ? item.urlToImage : notFoundImage} alt={item.title} />
@@ -18,6 +18,8 @@ export const Post = ({ posts,searchingPost }) => {
       </Link>
       </div>
     ));
+  
+  
   
 
   return (

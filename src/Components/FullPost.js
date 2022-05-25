@@ -1,21 +1,21 @@
 import React, { useState,useEffect  } from "react";
 import "./FullPost.css";
 import { Link, useParams } from "react-router-dom";
-import { updateNews } from "../api";
+import { updateNews } from '../api';
+
 
 export const FullPost = ({ posts }) => {
   let params = useParams();
+  
 
   const [postsInfo, setPostsInfo] = useState('');
   const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     updateNews.updateNewsInfo(params).then(info=>setPostsInfo(info))
   }, []);
-  console.log(postsInfo)
 
-  // const post = posts.filter((obj) => obj.url === Number(params.id));
-  // const post = postsInfo && postsInfo.filter((obj) => obj.url === params.id);
-  // console.log(post)
+
   let date;
   let postContent;
   if (postsInfo) {
