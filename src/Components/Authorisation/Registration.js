@@ -1,18 +1,27 @@
+import { useState } from 'react';
 import { Form } from '../Form';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { UseAuth } from '../hooks/useAuth';
 
 export const Registration = () => {
-		const navigate = useNavigate();
+	const [userDate, setUserDate] = useState('');
+	const navigate = useNavigate();
+	
+	// const userInfo = UseAuth(userDate);
+	// 	console.log(userDate)
 
 	const handleRegister = (email, password) => {
-		
 		const auth = getAuth();
+	 
 		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
+			.then(({user}) => {
 				// Signed in
-				const user = userCredential.user;
-				console.log(user)
+				// const user = userCredential.user;
+				// setUserData(user);
+				setUserDate(user)
+				
+			
 				navigate('/login')
 				// ...
 			})
