@@ -47,6 +47,11 @@ a.active-link {
   text-decoration: underline;
 }
 
+.wrapper{
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -5,35 +5,38 @@ import { useNavigate } from 'react-router-dom';
 import { UseAuth } from '../hooks/useAuth';
 
 export const Registration = () => {
-	const [userDate, setUserDate] = useState('');
+	const [ userDate, setUserDate ] = useState('');
 	const navigate = useNavigate();
-	
+
 	// const userInfo = UseAuth(userDate);
 	// 	console.log(userDate)
 
-	const handleRegister = (email, password) => {
+	const handleRegister = (email, password, displayName) => {
 		const auth = getAuth();
-	 
+		console.log(email, password, displayName);
+
 		createUserWithEmailAndPassword(auth, email, password)
-			.then(({user}) => {
+			.then(({ user }) => {
 				// Signed in
 				// const user = userCredential.user;
 				// setUserData(user);
-				setUserDate(user)
-				
-			
-				navigate('/login')
+				setUserDate(user);
+				navigate('/login');
 				// ...
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
-				alert(errorMessage)
+				alert(errorMessage);
 			});
-	}
+	};
 
 	return (
-		<Form title="sign in" handleCick={handleRegister}/>
-	)
-
+		<Form
+			formType="registration"
+			title="Регистрация"
+			buttonTitle="Зарегистрироваться"
+			handleCick={handleRegister}
+		/>
+	);
 };

@@ -1,9 +1,12 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import google from '../../image/google.svg';
+import './GoogleAuth.css'
 
 export const GoogleAuth = () => {
 	const provider = new GoogleAuthProvider();
 	const navigate = useNavigate();
+ 
 	
 	const GoogleAuthButton = () => {
 		const auth = getAuth();
@@ -23,8 +26,11 @@ export const GoogleAuth = () => {
 	};
 
 	return (
-		<div>
-			<button onClick={() => GoogleAuthButton()}>Google</button>
+		<div className='google'>
+			<button className='google__button' onClick={() => GoogleAuthButton()}>
+				<img className='google__img' src={google} />
+			</button>
 		</div>
+		 
 	);
 };

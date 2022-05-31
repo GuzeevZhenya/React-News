@@ -28,7 +28,9 @@ export const Login = () => {
 
 	return (
 		<Form
-				title="sign in"
+				formType="login"
+				title="Вход в аккаунт"
+				buttonTitle="Войти"
 				handleCick={handleLogin}
 		/>
 )

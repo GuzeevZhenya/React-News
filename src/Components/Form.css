@@ -1,0 +1,99 @@
+.registration{
+  width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center; 
+    justify-content: center; 
+    overflow: auto;   
+	
+   
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 510px;
+  height: 520px;
+  border: 1px solid rgba(39, 39, 39, 0.1);
+  background-color: #ffffff;
+  border-radius: 5px;
+	margin: 0 auto;
+}
+
+.box a{
+	color: rgb(67, 67, 247);
+}
+
+.box-container{
+	margin: 0;
+}
+
+.box h1 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.box__input {
+  width: 334px;
+  height: 48px;
+ padding-left: 5px;
+}
+.box__input::placeholder {
+  color: #272727;
+  font-size: 20px;
+  line-height: 24px;
+
+}
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.input__container label {
+  text-align: start;
+  color: rgba(23, 23, 25, 0.3);
+}
+
+.box__input {
+  border: 1px solid rgba(23, 23, 25, 0.2);
+  background-color: inherit;
+  position: relative;
+}
+
+.box__input:focus {
+  background: rgba(197, 228, 249, 0.3);
+  border: 2px solid #1390e5;
+}
+
+.box__button {
+  display: block;
+  background: #1390e5;
+  border-radius: 5px;
+  width: 176px;
+  height: 52px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 auto;
+	outline: none;
+	cursor: pointer;
+}
+.password__btn {
+  position: relative;
+}
+.password__btn-img {
+  position: absolute;
+  right: 12px;
+  top: -35px;
+}

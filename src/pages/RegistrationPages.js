@@ -1,15 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { Registration } from '../Components/Authorisation/Registration';
 
 export const RegistrationPages = () => {
 	return (
 			<div>
-			<h1>Register</h1>
-			<Registration/>
-					<p>
-							Already have an account? <Link to="/login">Sign in</Link>   
-					</p>            
+				<Registration/>
 			</div>
 	)
 }

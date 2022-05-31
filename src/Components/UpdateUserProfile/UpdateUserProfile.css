@@ -1,0 +1,21 @@
+.profile{
+	display:flex;
+	flex-direction: column;
+align-items: center;
+}
+
+.profile input[type="text"],input[type="email"],input[type="password"]{
+	width: 200px;
+	height: 20px;
+	border-radius: 30px;
+	margin: 5px 0;
+	padding-left: 10px;
+}
+
+.profile input[type="text"]::placeholder,input[type="email"]::placeholder,input[type="password"]::placeholder{
+	
+}
+
+.profile__update{
+	width: 200px;
+}

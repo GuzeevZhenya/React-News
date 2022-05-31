@@ -3,57 +3,47 @@ import { Navigate } from 'react-router-dom';
 import { Footer } from './Footer';
 import { Post } from './Post';
 import { news } from '../api';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import './Main.css';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 import { useSelector, useDispatch } from 'react-redux';
+import { Header } from './Header/Header';
+
+
+import './Main.css';
 
 export const Main = ({}) => {
-	const [searchingPost, setSearchingPost ] = useState([]);
-  const [posts, setPosts] = useState();
-  const [isUserLogIn, setIsUserLogIn] = useState(false);
 
-  const dispatch = useDispatch();
-  const loginUser = useSelector((state) => state.loginReducer);
-  console.log(loginUser.exces)
+	const dispatch = useDispatch();
+	const loginUser = useSelector((state) => state.loginReducer);
+  const postsReducer = useSelector((state) => state.postsReducer);
+
   
 	useEffect(() => {
-    news.getNews().then((data) => setPosts(data.articles));
-    const auth = getAuth();
-    const user = auth.currentUser;
-  
-      if (user !== null) {
-        // The user object has basic properties such as display name, email, etc.
-        const displayName = user.displayName;
-        const email = user.email;
-        const photoURL = user.photoURL;
-        const emailVerified = user.emailVerified;
-      
-        const uid = user.uid;
-      }
+    news.getNews().then((data) => dispatch({type:'ADD_POSTS',value:data}));
+    
+		const auth = getAuth();
+		const user = auth.currentUser;
 
+		if (user !== null) {
+			// The user object has basic properties such as display name, email, etc.
+			const displayName = user.displayName;
+			const email = user.email;
+			const photoURL = user.photoURL;
+			const emailVerified = user.emailVerified;
+
+			const uid = user.uid;
+		}
 	}, []);
 
-	// useEffect(() => {
-	//     news.getNews(searchingPost).then((data) => setPosts(data.articles));
-	// },[])
+	console.log(loginUser)
 
 	return loginUser.exces ? (
-        <div>
-        <input
-          value={searchingPost}
-          type="search"
-          placeholder="search"
-          onChange={(e) => setSearchingPost(e.target.value)}
-          className="main__search-input"
-        />
-        <button className="btn" onClick={() => setSearchingPost(searchingPost)}>
-          Найти
-        </button>
-              
-      <Post posts={posts} searchingPost={searchingPost} />
-        <Footer />
-      </div>
-    
-    
-	) : <Navigate to="/login" />;
+		<div>
+			<Header />
+			<Post posts={postsReducer} />
+			<Footer />
+		</div>
+	) : (
+		<Navigate to="/login" />
+	);
 };
