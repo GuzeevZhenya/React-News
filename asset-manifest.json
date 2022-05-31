@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/React-News/static/css/main.c5ad782c.css",
-    "main.js": "/React-News/static/js/main.a3e41a05.js",
-    "index.html": "/React-News/index.html",
-    "main.c5ad782c.css.map": "/React-News/static/css/main.c5ad782c.css.map",
-    "main.a3e41a05.js.map": "/React-News/static/js/main.a3e41a05.js.map"
+    "main.css": "/static/css/main.92f5aff4.css",
+    "main.js": "/static/js/main.1220c939.js",
+    "static/js/787.e3a8176e.chunk.js": "/static/js/787.e3a8176e.chunk.js",
+    "static/media/google.svg": "/static/media/google.d37dd7212fa3b9078fe020e250e9eb15.svg",
+    "static/media/eye-off.svg": "/static/media/eye-off.b647f74cd8065d95c09aebe74b45c6c9.svg",
+    "index.html": "/index.html",
+    "static/media/search.svg": "/static/media/search.f326cfeb43dbf9dd272f.svg",
+    "static/media/eye.svg": "/static/media/eye.9ea16cf9ee98c4b0af043979f2a0882b.svg",
+    "main.92f5aff4.css.map": "/static/css/main.92f5aff4.css.map",
+    "main.1220c939.js.map": "/static/js/main.1220c939.js.map",
+    "787.e3a8176e.chunk.js.map": "/static/js/787.e3a8176e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5ad782c.css",
-    "static/js/main.a3e41a05.js"
+    "static/css/main.92f5aff4.css",
+    "static/js/main.1220c939.js"
   ]
 }
