@@ -4,7 +4,7 @@
 align-items: center;
 }
 
-.profile input[type="text"],input[type="email"],input[type="password"]{
+.profile__input{
 	width: 200px;
 	height: 20px;
 	border-radius: 30px;
@@ -12,9 +12,7 @@ align-items: center;
 	padding-left: 10px;
 }
 
-.profile input[type="text"]::placeholder,input[type="email"]::placeholder,input[type="password"]::placeholder{
-	
-}
+ 
 
 .profile__update{
 	width: 200px;

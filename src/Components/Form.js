@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 export const Form = ({ title, handleCick, buttonTitle, formType }) => {
 	const [ email, setEmail ] = useState('');
-	const [pass, setPass] = useState('');
-	const [name, setName] = useState('');
+	const [ pass, setPass ] = useState('');
+	const [ name, setName ] = useState('');
 	const [ isVisiblePassword, setIsVisiblePassword ] = useState(false);
 
 	const setVisiblePassword = () => {
@@ -22,14 +22,14 @@ export const Form = ({ title, handleCick, buttonTitle, formType }) => {
 				{formType === 'login' ? <GoogleAuth /> : null}
 				{formType === 'login' ? null : (
 					<div className="input__container">
-					<label htmlFor="name">Name</label>
-					<input
-						className="box__input"
-						type="text"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-					/>
-				</div>
+						<label htmlFor="name">Name</label>
+						<input
+							className="box__input"
+							type="text"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+						/>
+					</div>
 				)}
 				<div className="input__container">
 					<label htmlFor="email">Email</label>
@@ -57,7 +57,7 @@ export const Form = ({ title, handleCick, buttonTitle, formType }) => {
 					</div>
 				</div>
 
-				<button className="box__button" type="submit" onClick={() => handleCick(email, pass,name)}>
+				<button className="box__button" type="submit" onClick={() => handleCick(email, pass, name)}>
 					{buttonTitle}
 				</button>
 				{formType === 'login' ? (

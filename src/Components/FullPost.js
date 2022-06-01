@@ -4,12 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import { updateNews } from '../api';
 
 
-export const FullPost = ({ posts }) => {
+export const FullPost = () => {
   let params = useParams();
   
-
   const [postsInfo, setPostsInfo] = useState('');
-  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     updateNews.updateNewsInfo(params).then(info=>setPostsInfo(info))

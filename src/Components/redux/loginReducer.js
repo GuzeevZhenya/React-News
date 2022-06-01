@@ -5,7 +5,7 @@ const initialState = {
 
 export const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-   
+    
       case "ADD_USER":
         return {
           ...state,
@@ -13,7 +13,7 @@ export const loginReducer = (state = initialState, action) => {
           exces:true
       };
     case 'UPDATE_USER':
-      console.log(state)
+      console.log(action.value)
       return {
         ...state,
         user:action.value

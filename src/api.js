@@ -12,6 +12,14 @@ export const news = {
   },
 };
 
+// export const news = {
+//   async getNews(searchInfo = search) {
+//     const resp = await fetch(`https://newsapi.org/v2/everything?q=${searchInfo}&sortBy=popularity&apiKey=8456fdd8beb84ee3a833ad163bf8bb03`);
+//    console.log(resp)
+    
+//   },
+// };
+
 
 export const updateNews = {
   updateNewsInfo(params) {

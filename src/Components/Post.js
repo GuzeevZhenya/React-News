@@ -4,6 +4,7 @@ import "./Post.css";
 import notFoundImage from '../image/images.png';
 
 export const Post = ({ posts, searchingPost }) => {
+  console.log(posts)
   const post =
     posts.posts &&
     posts.posts.map((item) => (
