@@ -11,6 +11,7 @@ export const HeaderAvatar = () => {
 
 	const exitFromAccount = () => {
 		dispatch({ type: 'EXIT', value: [] });
+		localStorage.removeItem('token');
 	};
 
 

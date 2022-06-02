@@ -11,11 +11,15 @@ export const Login = () => {
 	
 	const handleLogin = (email, password) => {
 		const auth = getAuth();
+	
+		 
 		signInWithEmailAndPassword(auth, email, password)
-		.then((userCredential) => {
-		
+			.then((userCredential) => {
+				const token = auth.currentUser.accessToken;
+			window.localStorage.setItem('token',token)
 			const user = userCredential.user;
-			dispatch({type:"ADD_USER",value:user})
+			dispatch({ type: "ADD_USER", value: user })
+			
 			navigate('/')
 		
 		})
