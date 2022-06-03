@@ -16,8 +16,8 @@ function App() {
 				<Route path="/login" element={<LogInPages />} />
 				<Route path="/register" element={<RegistrationPages />} />
 
-        <Route element={<PrivateRoute />}>
-          <Route path="/profile" element={<ProfilePages />} />
+        <Route path='/' element={<PrivateRoute />}>
+          <Route path="profile" element={<ProfilePages />} />
         </Route>
 				{
 					//        ИЛИ
