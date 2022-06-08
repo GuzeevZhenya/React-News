@@ -35,7 +35,7 @@ export const Main = ({}) => {
 		}
 	}, []);
 
-	console.log(loginUser)
+
 
 	return loginUser.exces ? (
 		<div>

@@ -1,18 +1,23 @@
 import React, { useState,useEffect  } from "react";
 import "./FullPost.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 import { updateNews } from '../api';
 
 
 export const FullPost = () => {
   let params = useParams();
+  const navigate = useNavigate();
+  console.log(params)
   
-  const [postsInfo, setPostsInfo] = useState('');
+  const [postsInfo, setPostsInfo] = useState(null);
+  console.log(postsInfo)
+
+  const goBack = ()=> navigate(-1)
   
   useEffect(() => {
     updateNews.updateNewsInfo(params).then(info=>setPostsInfo(info))
-  }, []);
-
+  }, [params]);
+console.log(params)
 
   let date;
   let postContent;
@@ -22,7 +27,7 @@ export const FullPost = () => {
   }
 
   return (
-    <div className="npm">
+    <div className="full-post">
     {postsInfo ?(<> <img
       className="full-post__img"
       src={postsInfo[0].urlToImage}
@@ -33,8 +38,9 @@ export const FullPost = () => {
     </p>
     <div className="full-post__content">
       <h1 className="full-post__title">{postsInfo[0].title}</h1>
-      <p className="full-post__content">{postContent}</p>
-      <Link className="full-post__back" to='/'>Назад</Link>
+          <p className="full-post__content">{postContent}</p>
+          <Link to={`/post/${encodeURIComponent(params.id)}/edit`}>Редактировать пост</Link>
+      <button className="full-post__back" onClick={goBack}>Назад</button>
         </div>
       </>) : null}
      

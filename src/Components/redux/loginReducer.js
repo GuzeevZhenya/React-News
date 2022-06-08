@@ -13,7 +13,7 @@ export const loginReducer = (state = initialState, action) => {
           exces:true
       };
     case 'UPDATE_USER':
-      console.log(action.value)
+      console.log(state.user)
       return {
         ...state,
         user:action.value

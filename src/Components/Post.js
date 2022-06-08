@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Post.css";
 import notFoundImage from '../image/images.png';
+import { useSelector, useDispatch } from 'react-redux';
 
 export const Post = ({ posts, searchingPost }) => {
-  console.log(posts)
+  
+  const postsReducer = useSelector((state) => state.postsReducer);
   const post =
-    posts.posts &&
-    posts.posts.map((item) => (
+  postsReducer.posts &&
+  postsReducer.posts.map((item) => (
       <div className="post" key={item.url}>
       <Link className="post-content" to={`post/${encodeURIComponent(item.url)}`}>
         <h2>{item.title}</h2>
@@ -24,8 +26,10 @@ export const Post = ({ posts, searchingPost }) => {
       <h2>Посты</h2>
       
       <div className="posts">
-      {post && post.length ? <>{post}</> : <h3>По запроса: "{searchingPost}" ничего не найдено</h3>}
+        {post && post.length ? <>{post}</> : <h3>По запроса: "{searchingPost}" ничего не найдено</h3>}
     </div> 
     </div>
   );
 };
+
+ 

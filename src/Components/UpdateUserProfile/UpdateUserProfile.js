@@ -12,8 +12,9 @@ export const UpdateUserProfile = () => {
 	const [ password, setPassword ] = useState('');
 	// const [user, setUser] = useState('');
 
-	const loginUser = useSelector((state) => state.userProfileReducer);
+	const loginUser = useSelector((state) => state.loginReducer);
  
+ console.log(loginUser)
 	const auth = getAuth();
 	const user = auth.currentUser;
 
